@@ -1,0 +1,57 @@
+<header class="w-full relative">
+  <div
+    class="bg-[#010B0D] h-[105px] px-5 flex justify-between items-center sm:h-[120px] sm:px-[60px] xl:px-[120px] xl:h-[105px]"
+  >
+    <img
+      (click)="onToggleMenu()"
+      src="./assets/header/menu.svg"
+      alt="Menu Icon"
+      class="sm:h-[30px] xl:hidden "
+    />
+    <h1 class="cursor-pointer text-white text-[14px] sm:text-[24px]">ProMediaX</h1>
+
+    <label class="relative block w-[30%] xl:h-[36px] lg:w-[282px]">
+      <img
+        src="./assets/header/akar-icons_searchw.svg"
+        alt="Search Icon"
+        class="hidden lg:block absolute top-1/2 -translate-y-1/2 sm:left-[20px]"
+      />
+      <input
+        type="text"
+        class="h-[24px] w-full border rounded-lg lg:h-[36px] placeholder:text-[#717171] pl-4 text-[10px] font-medium lg:pl-[75px] lg:text-[16px]"
+        placeholder="Search"
+        name="search"
+      />
+    </label>
+
+    <div
+      class=" xl:w-[452px] text-white text-[10px] lg:text-[16px] font-bold justify-between items-center h-[50px] hidden xl:flex"
+    >
+      <p class="cursor-pointer">Music</p>
+      <p class="cursor-pointer">Character</p>
+      <p class="cursor-pointer">Design</p>
+    </div>
+
+    <div
+      routerLink="/signin"
+      class="cursor-pointer w-[50px] flex justify-center items-center h-[24px] rounded-[7px] border-[1px] border-white sm:w-[78px] sm:h-[36px] lg:h-[36px]"
+    >
+      <p class="text-[10px] text-white font-bold sm:text-[16px]">Sign in</p>
+    </div>
+  </div>
+
+  <!-- Toggling Menu Div -->
+  <div
+    *ngIf="isOpenMenu"
+    class="absolute top-0 left-0 h-[300px] bg-[#3E3E3E] w-full pl-5 pt-11 text-white font-bold text-[14px] z-10 sm:pl-10 xl:hidden"
+  >
+    <img
+      (click)="onToggleMenu()"
+      src="./assets/header/close.svg"
+      alt="Close Menu Icon"
+    />
+    <a href="" class="mt-9 block">Music</a>
+    <a href="" class="mt-9 block">Character</a>
+    <a href="" class="mt-9 block">Design</a>
+  </div>
+</header>

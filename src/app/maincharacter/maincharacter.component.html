@@ -1,0 +1,177 @@
+<app-mainheader></app-mainheader>
+<div class="bg-[#F9FAFC] px-5 w-full lg:px-[120px]">
+  <div class="relative w-full lg:flex lg:justify-between">
+    <div class="text-center pt-[20px] lg:pt-[80px] lg:w-[50%] lg:text-left">
+      <h1 class="text-[#002D4A] text-[14px] lg:text-[32px]">This way to buy</h1>
+      <h1 class="text-[#0D6098] text-[32px] mt-[8px] lg:text-[120px]">
+        CHARACTER
+      </h1>
+      <p
+        class="text-[#002D4A] text-[12px] px-6 mt-[24px] lg:px-0 lg:text-[20px]"
+      >
+        High-quality 3D models for VFX, game development, VR/AR, architecture,
+        and animation.Inspect every mesh and texture before you buy.
+      </p>
+      <!-- seenow -->
+      <div
+        class="w-[15%] text-center flex justify-center items-center lg:mt-[32px] lg:h-[48px] lg:mx-0 h-[32px] mx-auto mt-[12px] rounded-[6px] border-[#002D4A] border-[1px]"
+      >
+        <p
+          class="text-[10px] text-[#002D4A] font-bold rounded-[6px] lg:text-[16px]"
+        >
+          View all
+        </p>
+      </div>
+
+      <div for="" class="w-ful h-[32px] flex mt-[20px] lg:h-[60px]">
+        <input
+          type="text"
+          placeholder="Search character models"
+          class="w-[80%] px-[20px] block bg-[#ececec] lg:rounded-tl-[12px] lg:rounded-bl-[12px] rounded-tl-[4px] rounded-bl-[4px] placeholder:text-[#717171] text-[12px] lg:text-[16px]"
+        />
+        <button
+          class="bg-[#002D4A] w-[20%] lg:rounded-tr-[12px] lg:rounded-br-[12px] flex justify-center items-center"
+        >
+          <span class="text-white text-[12px] lg:text-[16px]">Search</span>
+        </button>
+      </div>
+    </div>
+    <div
+      class="w-full h-[250px] lg:w-[50%] flex justify-center items-center lg:h-[360px]"
+    >
+      <iframe
+        src="https://my.spline.design/happyrobotbutton-93eb045bff370eaa0f37720b251a2904/"
+        frameborder="0"
+        class="h-full w-full lg:scale-[150%]"
+      ></iframe>
+    </div>
+  </div>
+
+  <!-- topmodels -->
+  <div class="">
+    <div class="text-center">
+      <h1 class="text-[#0D6098] text-[20px] lg:text-[52px] lg:mt-[160px]">
+        TOP MODELS
+      </h1>
+      <p
+        class="text-[#002D4A] text-[12px] w-[50%] mx-auto lg:text-[24px] mt-[4px]"
+      >
+        The most purchased and impressive products of the week
+      </p>
+    </div>
+    <div class="w-full flex justify-center items-center">
+      <div class="w-full flex justify-center items-center">
+        <div style="width: 386.24px; height: 563.98px; position: relative">
+          <div
+            style="
+              width: 289.5px;
+              height: 338.75px;
+              left: 40.48px;
+              top: 225.23px;
+              position: absolute;
+              background: linear-gradient(219deg, #fc707e 0%, #c7414d 100%);
+              border-radius: 32px;
+            "
+          ></div>
+          <div
+            style="
+              left: 69.95px;
+              top: 476.98px;
+              position: absolute;
+              color: white;
+              font-size: 28px;
+              font-family: Nunito;
+              font-weight: 700;
+              word-wrap: break-word;
+            "
+          >
+            Rosetta
+          </div>
+          <div
+            style="
+              left: 69.95px;
+              top: 510.98px;
+              position: absolute;
+              color: rgba(255, 255, 255, 0.7);
+              font-size: 14px;
+              font-family: Nunito;
+              font-weight: 400;
+              word-wrap: break-word;
+            "
+          >
+            Movie
+          </div>
+          <div
+            style="
+              left: 121.95px;
+              top: 510.98px;
+              position: absolute;
+              color: white;
+              font-size: 14px;
+              font-family: Nunito;
+              font-weight: 700;
+              word-wrap: break-word;
+            "
+          >
+            Disney
+          </div>
+          <img
+            style="
+              width: 332.22px;
+              height: 426.39px;
+              left: 0px;
+              top: 44.42px;
+              position: absolute;
+              transform: rotate(-7.68deg);
+              transform-origin: 0 0;
+            "
+            src="./assets/maincharacter/rosetta-removebg-preview 1.png"
+          />
+          <div
+            style="
+              width: 60px;
+              height: 60px;
+              left: 239.67px;
+              top: 476.98px;
+              position: absolute;
+            "
+          >
+            <div
+              style="
+                left: 8px;
+                top: 13.5px;
+                position: absolute;
+                color: white;
+                font-size: 24px;
+                font-family: Nunito;
+                font-weight: 700;
+                word-wrap: break-word;
+              "
+            >
+              $30
+            </div>
+            <div
+              style="
+                width: 60px;
+                height: 60px;
+                left: 0px;
+                top: 0px;
+                position: absolute;
+                border-radius: 10px;
+                border: 1px white solid;
+              "
+            ></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="" *ngFor="let name of names">
+    <p class="">{{ name }}</p>
+  </div>
+
+  <img
+    src="https://firebasestorage.googleapis.com/v0/b/characterstore-32051.appspot.com/o/rosetta-removebg-preview%201.png?alt=media&token=a55c26b8-3634-4d9d-83f0-7d434c89f098"
+    alt=""
+  />
+</div>

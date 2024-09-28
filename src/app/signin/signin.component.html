@@ -33,7 +33,7 @@
       >
     </label>
     <div class="lg:mt-[32px] w-full flex justify-center mt-[16px]">
-      <button class="lg:h-[48px] bg-[#0D6098] w-full h-[32px] rounded-[12px]">
+      <button routerLink="/maincharacter" class="lg:h-[48px] bg-[#0D6098] w-full h-[32px] rounded-[12px]">
         <span class="text-white font-bold text-[12px] lg:text-[24px]"
           >Sign in</span
         >
@@ -58,8 +58,11 @@
         Login with Google
       </p>
     </div>
-    <p class="text-center text-[10px] mt-[12px] lg:mt-[32px] text-[#222222]">
-      Don’t have an account? <span class="font-bold">Sign up</span>
+    <p
+      class="text-center text-[10px] lg:text-[16px] mt-[12px] lg:mt-[32px] text-[#717171]"
+    >
+      Don’t have an account?
+      <span class="font-bold cursor-pointer" routerLink="/signup">Sign up</span>
     </p>
   </div>
 </div>

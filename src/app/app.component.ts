@@ -4,6 +4,7 @@ import { HomepageComponent } from './homepage/homepage.component';
 import { ProMeidaXHeaderNavComponent } from './pro-meida-x-header-nav/pro-meida-x-header-nav.component';
 import { PromediaXFooterNavComponent } from './promedia-x-footer-nav/promedia-x-footer-nav.component';
 import { SigninComponent } from './signin/signin.component';
+import { HttpClientJsonpModule } from '@angular/common/http';
 
 @Component({
   selector: 'app-root',
@@ -14,6 +15,7 @@ import { SigninComponent } from './signin/signin.component';
     HomepageComponent,
     ProMeidaXHeaderNavComponent,
     PromediaXFooterNavComponent,
+    HttpClientJsonpModule
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',

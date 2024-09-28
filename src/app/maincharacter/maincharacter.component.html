@@ -1,4 +1,5 @@
 <app-mainheader></app-mainheader>
+<!-- F9FAFC -->
 <div class="bg-[#F9FAFC] px-5 w-full lg:px-[120px]">
   <div class="relative w-full lg:flex lg:justify-between">
     <div class="text-center pt-[20px] lg:pt-[80px] lg:w-[50%] lg:text-left">
@@ -46,7 +47,6 @@
       ></iframe>
     </div>
   </div>
-
   <!-- topmodels -->
   <div class="">
     <div class="text-center">
@@ -59,119 +59,28 @@
         The most purchased and impressive products of the week
       </p>
     </div>
-    <div class="w-full flex justify-center items-center">
-      <div class="w-full flex justify-center items-center">
-        <div style="width: 386.24px; height: 563.98px; position: relative">
-          <div
-            style="
-              width: 289.5px;
-              height: 338.75px;
-              left: 40.48px;
-              top: 225.23px;
-              position: absolute;
-              background: linear-gradient(219deg, #fc707e 0%, #c7414d 100%);
-              border-radius: 32px;
-            "
-          ></div>
-          <div
-            style="
-              left: 69.95px;
-              top: 476.98px;
-              position: absolute;
-              color: white;
-              font-size: 28px;
-              font-family: Nunito;
-              font-weight: 700;
-              word-wrap: break-word;
-            "
-          >
-            Rosetta
-          </div>
-          <div
-            style="
-              left: 69.95px;
-              top: 510.98px;
-              position: absolute;
-              color: rgba(255, 255, 255, 0.7);
-              font-size: 14px;
-              font-family: Nunito;
-              font-weight: 400;
-              word-wrap: break-word;
-            "
-          >
-            Movie
-          </div>
-          <div
-            style="
-              left: 121.95px;
-              top: 510.98px;
-              position: absolute;
-              color: white;
-              font-size: 14px;
-              font-family: Nunito;
-              font-weight: 700;
-              word-wrap: break-word;
-            "
-          >
-            Disney
-          </div>
+  </div>
+  <div class="w-full flex items-center">
+    <div class="xl:flex xl:justify-between w-full">
+      <div
+        class="xl:w-[290px] w-full h-[450px] mt-[20px] lg:h-[486px]"
+        *ngFor="let name of names; let i = index"
+      >
+        <div
+          class="bg-center bg-no-repeat w-full h-full flex relative"
+          [ngStyle]="{
+          'background-image': 'url(' + name + ')',
+          'background-position': 'bottom center',
+        }"
+        >
           <img
-            style="
-              width: 332.22px;
-              height: 426.39px;
-              left: 0px;
-              top: 44.42px;
-              position: absolute;
-              transform: rotate(-7.68deg);
-              transform-origin: 0 0;
-            "
-            src="./assets/maincharacter/rosetta-removebg-preview 1.png"
+            src="https://firebasestorage.googleapis.com/v0/b/characterstore-32051.appspot.com/o/saddness.svg?alt=media&token=a8dd551d-277b-441a-a7a4-c28d1114be60"
+            alt=""
+            class="absolute lg:scale-[100%] scale-[80%] left-1/2 transform -translate-x-1/2 bottom-[120px]"
           />
-          <div
-            style="
-              width: 60px;
-              height: 60px;
-              left: 239.67px;
-              top: 476.98px;
-              position: absolute;
-            "
-          >
-            <div
-              style="
-                left: 8px;
-                top: 13.5px;
-                position: absolute;
-                color: white;
-                font-size: 24px;
-                font-family: Nunito;
-                font-weight: 700;
-                word-wrap: break-word;
-              "
-            >
-              $30
-            </div>
-            <div
-              style="
-                width: 60px;
-                height: 60px;
-                left: 0px;
-                top: 0px;
-                position: absolute;
-                border-radius: 10px;
-                border: 1px white solid;
-              "
-            ></div>
-          </div>
         </div>
       </div>
     </div>
   </div>
-  <div class="" *ngFor="let name of names">
-    <p class="">{{ name }}</p>
-  </div>
-
-  <img
-    src="https://firebasestorage.googleapis.com/v0/b/characterstore-32051.appspot.com/o/rosetta-removebg-preview%201.png?alt=media&token=a55c26b8-3634-4d9d-83f0-7d434c89f098"
-    alt=""
-  />
+  <p class="">aaaaaaaaaaaa</p>
 </div>

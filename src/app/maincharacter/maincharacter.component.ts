@@ -29,6 +29,7 @@ export class MaincharacterComponent implements OnInit {
     this.getDataFromServer().subscribe(
       (response) => {
         this.names = response.names; // Gán danh sách tên từ API
+        console.log(this.names);
       },
       (error) => {
         console.error('Error fetching data:', error);

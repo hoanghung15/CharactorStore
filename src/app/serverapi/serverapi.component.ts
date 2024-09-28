@@ -32,4 +32,5 @@ export class ServerapiComponent implements OnInit {
   getDataFromServer(): Observable<any> {
     return this.http.get<any>(this.apiUrl);
   }
+  
 }

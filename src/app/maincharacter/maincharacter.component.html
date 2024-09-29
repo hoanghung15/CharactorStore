@@ -60,32 +60,66 @@
       </p>
     </div>
   </div>
-  <div class="w-full overflow-hidden">
+  <div class="mt-[45px] w-full overflow-hidden">
     <div
       class="item-container"
       [ngStyle]="{ transform: 'translateX(' + translateX + 'px)' }"
     >
       <div
         class="item min-w-full lg:min-w-[300px] h-[450px] mr-[10px] lg:mr-[90px]"
-        *ngFor="let name of names; let i = index"
+        *ngFor="let character of characters; let i = index"
       >
         <div
           class="bg-center bg-no-repeat w-full h-full flex relative"
           [ngStyle]="{
-            'background-image': 'url(' + name + ')',
+            'background-image': 'url(' + character.bgUrlTop + ')',
             'background-position': 'bottom center'
           }"
         >
           <img
-            src="https://firebasestorage.googleapis.com/v0/b/characterstore-32051.appspot.com/o/saddness.svg?alt=media&token=a8dd551d-277b-441a-a7a4-c28d1114be60"
-            alt="Saddness Icon"
-            class="absolute lg:scale-[100%] scale-[80%] left-1/2 transform -translate-x-1/2 bottom-[120px]"
+            src="{{ character.imgUrl }}"
+            alt=""
+            class="absolute lg:scale-[100%] scale-[100%] left-1/2 transform -translate-x-1/2 bottom-[120px]"
           />
+          <div
+            class="w-full h-[100px] px-[20%] lg:px-[10%] sm:px-[35%] absolute bottom-0 text-white flex justify-between items-center"
+          >
+            <div class="">
+              <p class="text-[28px] font-bold">{{ character.name }}</p>
+              <div class="flex items-center">
+                <p class="text-[14px] font-light">{{ character.type }}:</p>
+                <p class="ml-[12px]">{{ character.namemovie }}</p>
+              </div>
+            </div>
+            <div
+              class="flex justify-center items-center w-[60px] h-[60px] border-[1px] border-white rounded-[10px]"
+            >
+              <p class="text-[14px] font-bold">${{ character.price }}</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </div>
-
-  <button (click)="previous()">Previous</button>
-  <button (click)="next()">Next</button>
+  <div class="w-full h-[36px] flex justify-between mt-[32px]">
+    <div class="ml-[10px]">
+      <p class="text-[#504F4F] underline font-bold text-[20px]">View all</p>
+    </div>
+    <div class="w-[210px] flex justify-between">
+      <div
+        class="flex cursor-pointer justify-center items-center"
+        (click)="previous()"
+      >
+        <img src="./assets/maincharacter/back.svg" alt="" class="" />
+        <button class="ml-[16px]">Previous</button>
+      </div>
+      <div
+        class="flex cursor-pointer justify-center items-center"
+        (click)="next()"
+      >
+        <button class="mr-[16px]">Next</button>
+        <img src="./assets/maincharacter/next.svg" alt="" class="" />
+      </div>
+    </div>
+  </div>
 </div>

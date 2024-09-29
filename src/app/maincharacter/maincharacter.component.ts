@@ -19,7 +19,7 @@ import { CommonModule, NgClass } from '@angular/common';
   styleUrls: ['./maincharacter.component.css'],
 })
 export class MaincharacterComponent implements OnInit {
-  names: string[] = []; // List of names from API
+  characters: any[] = []; // List of names from API
   currentIndex: number = 0;
   translateX: number = 0;
   itemWidth: number = 330; // Width of one item including margin
@@ -32,8 +32,25 @@ export class MaincharacterComponent implements OnInit {
   ngOnInit(): void {
     this.getDataFromServer().subscribe(
       (response) => {
-        this.names = response.names;
-        console.log(this.names);
+        this.characters = response.test.map((character: any) => ({
+          id: character.id,
+          name: character.name,
+          type:character.type,
+          namemovie: character.namemovie,
+          author: character.author,
+          downloadsize: character.downloadsize,
+          texture: character.texture,
+          uvlayer: character.uvlayer,
+          vertices: character.vertices,
+          rigged: character.rigged,
+          price: character.price,
+          urlView: character.urlView,
+          urlBg: character.urlBg,
+          countofsold: character.countofsold,
+          imgUrl: character.imgUrl,
+          bgUrlTop: character.bgUrlTop,
+        }));
+        console.log(this.characters);
       },
       (error) => {
         console.error('Error fetching data:', error);
@@ -47,7 +64,7 @@ export class MaincharacterComponent implements OnInit {
 
   next() {
     // Move to the next set of items
-    if (this.currentIndex + this.visibleItems < this.names.length) {
+    if (this.currentIndex + this.visibleItems < 3) {
       this.currentIndex++;
       this.translateX -= this.itemWidth;
     }

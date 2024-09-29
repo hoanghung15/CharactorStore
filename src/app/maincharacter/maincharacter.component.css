@@ -5,3 +5,7 @@ span,
 p {
   font-family: Nunito Sans;
 }
+.item-container {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}

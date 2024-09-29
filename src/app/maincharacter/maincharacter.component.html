@@ -60,27 +60,32 @@
       </p>
     </div>
   </div>
-  <div class="w-full flex items-center">
-    <div class="xl:flex xl:justify-between w-full">
+  <div class="w-full overflow-hidden">
+    <div
+      class="item-container"
+      [ngStyle]="{ transform: 'translateX(' + translateX + 'px)' }"
+    >
       <div
-        class="xl:w-[290px] w-full h-[450px] mt-[20px] lg:h-[486px]"
+        class="item min-w-full lg:min-w-[300px] h-[450px] mr-[10px] lg:mr-[90px]"
         *ngFor="let name of names; let i = index"
       >
         <div
           class="bg-center bg-no-repeat w-full h-full flex relative"
           [ngStyle]="{
-          'background-image': 'url(' + name + ')',
-          'background-position': 'bottom center',
-        }"
+            'background-image': 'url(' + name + ')',
+            'background-position': 'bottom center'
+          }"
         >
           <img
             src="https://firebasestorage.googleapis.com/v0/b/characterstore-32051.appspot.com/o/saddness.svg?alt=media&token=a8dd551d-277b-441a-a7a4-c28d1114be60"
-            alt=""
+            alt="Saddness Icon"
             class="absolute lg:scale-[100%] scale-[80%] left-1/2 transform -translate-x-1/2 bottom-[120px]"
           />
         </div>
       </div>
     </div>
   </div>
-  <p class="">aaaaaaaaaaaaaaaaaaaaa</p>
+
+  <button (click)="previous()">Previous</button>
+  <button (click)="next()">Next</button>
 </div>

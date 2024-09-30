@@ -36,7 +36,9 @@ export class MaincharacterComponent implements OnInit {
     this.getDataFromServer().subscribe(
       (response) => {
         this.characters = this.mapCharacterData(response.test);
-        this.lastestCharacter = this.mapCharacterData(response.lastestCharacter);
+        this.lastestCharacter = this.mapCharacterData(
+          response.lastestCharacter
+        );
         console.log(this.characters);
         console.log(this.lastestCharacter);
       },

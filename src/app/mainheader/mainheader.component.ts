@@ -10,8 +10,10 @@ import { RouterLink, RouterOutlet } from '@angular/router';
   styleUrl: './mainheader.component.css',
 })
 export class MainheaderComponent {
-  isOpenMenu = false
+  avtUrl = sessionStorage.getItem('avtUrl');
+  isOpenMenu = false;
   onToggleMenu() {
-    this.isOpenMenu = !this.isOpenMenu
+    this.isOpenMenu = !this.isOpenMenu;
+    console.log(this.avtUrl);
   }
 }

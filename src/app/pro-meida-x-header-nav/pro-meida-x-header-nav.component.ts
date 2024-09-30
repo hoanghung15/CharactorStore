@@ -1,7 +1,12 @@
 import { CommonModule, NgClass } from '@angular/common';
 import { Component } from '@angular/core';
 import { NgModel } from '@angular/forms';
-import { Router, RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
+import {
+  Router,
+  RouterLink,
+  RouterLinkActive,
+  RouterOutlet,
+} from '@angular/router';
 
 @Component({
   selector: 'app-pro-meida-x-header-nav',
@@ -12,9 +17,12 @@ import { Router, RouterLink, RouterLinkActive, RouterOutlet } from '@angular/rou
 })
 export class ProMeidaXHeaderNavComponent {
   isOpenMenu = false;
-
   onToggleMenu() {
     this.isOpenMenu = !this.isOpenMenu;
     console.log('clicked');
+  }
+  testclick(txt: any) {
+    // sessionStorage.setItem('isloggin', 'false');
+    sessionStorage.setItem('router', txt);
   }
 }

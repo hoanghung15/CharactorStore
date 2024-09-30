@@ -3,7 +3,9 @@ import { HomepageComponent } from './homepage/homepage.component';
 import { SigninComponent } from './signin/signin.component';
 import { SignupComponent } from './signup/signup.component';
 import { MaincharacterComponent } from './maincharacter/maincharacter.component';
-import { TestcomComponent } from './testcom/testcom.component';
+import { authGuard } from './auth.guard';
+import { TestComponent } from './test/test.component';
+import { MusicComponent } from './music/music.component';
 
 export const routes: Routes = [
   {
@@ -21,8 +23,19 @@ export const routes: Routes = [
   {
     path: 'maincharacter',
     component: MaincharacterComponent,
+    canActivate: [authGuard],
   },
   {
-    path:'test',component:TestcomComponent
-  }
+    path: 'signin/testr',
+    component: TestComponent,
+  },
+  {
+    path: 'signin/maincharacter',
+    component: MaincharacterComponent,
+  },
+  {
+    path: 'music',
+    component: MusicComponent,
+    canActivate: [authGuard],
+  },
 ];

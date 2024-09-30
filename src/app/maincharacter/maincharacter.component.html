@@ -92,33 +92,126 @@
               </div>
             </div>
             <div
-              class="flex justify-center items-center w-[60px] h-[60px] border-[1px] border-white rounded-[10px]"
+              class="flex justify-center bg-cover items-center h-[50px] w-[50px] lg:w-[60px] lg:h-[60px] hover:border-[0px] border-[1px] border-white rounded-[10px] hover:bg-[url('/assets/maincharacter/shoppingcart.svg')] relative group"
             >
-              <p class="text-[14px] font-bold">${{ character.price }}</p>
+              <p
+                class="lg:text-[14px] text-[12px] font-bold group-hover:hidden"
+              >
+                ${{ character.price }}
+              </p>
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-  <div class="w-full h-[36px] flex justify-between mt-[32px]">
-    <div class="ml-[10px]">
-      <p class="text-[#504F4F] underline font-bold text-[20px]">View all</p>
+  <div
+    class="w-full h-[36px] flex lg:justify-between justify-center items-center mt-[12px] lg:mt-[32px]"
+  >
+    <div class="ml-[10px] hidden lg:block">
+      <p class="text-[#504F4F] underline font-bold text-[18px] cursor-pointer">
+        View all
+      </p>
     </div>
+    <!-- button -->
     <div class="w-[210px] flex justify-between">
       <div
         class="flex cursor-pointer justify-center items-center"
         (click)="previous()"
       >
-        <img src="./assets/maincharacter/back.svg" alt="" class="" />
-        <button class="ml-[16px]">Previous</button>
+        <img
+          src="./assets/maincharacter/back.svg"
+          alt=""
+          class="lg:scale-[100%] scale-[60%]"
+        />
+        <button class="ml-[16px] lg:text-[16px] text-[12px]">Previous</button>
       </div>
       <div
         class="flex cursor-pointer justify-center items-center"
         (click)="next()"
       >
-        <button class="mr-[16px]">Next</button>
-        <img src="./assets/maincharacter/next.svg" alt="" class="" />
+        <button class="mr-[16px] lg:text-[16px] text-[12px]">Next</button>
+        <img
+          src="./assets/maincharacter/next.svg"
+          alt=""
+          class="lg:scale-[100%] scale-[60%]"
+        />
+      </div>
+    </div>
+  </div>
+
+  <!-- new model -->
+
+  <div class="mt-[32px] w-full lg:flex lg:justify-between">
+    <div
+      class="w-full lg:w-[45%] h-[200px] lg:h-[700px] order-2 lg:items-center flex"
+    >
+      <div class="text-center lg:text-right">
+        <h1 class="text-[#0D6098] text-[20px] lg:text-[48px]">
+          NEW MODEL OF THE WEEK
+        </h1>
+        <p
+          class="text-[#002D4A] px-[20px] lg:px-[0] lg:text-[24px] lg:mt-[32px]"
+        >
+          <span class="text-[#D31101] font-bold">Dash Parr</span> is a
+          super-fast kid from The Incredibles. He's energetic, mischievous, and
+          the son of Mr. Incredible and Elastigirl.
+        </p>
+        <button
+          class="lg:rounded-[22px] mt-[16px] w-[100px] h-[32px] bg-gradient-to-r from-[#c10f00] to-[#80150b] rounded-[6px] lg:w-[218.88px] lg:h-[70px] lg:mt-[62px]"
+        >
+          <span
+            id="test"
+            class="text-white text-[12px] lg:text-[20px] font-thin"
+            >Read more</span
+          >
+        </button>
+      </div>
+    </div>
+    <div class="w-full lg:w-[45%] h-[400px] lg:h-[700px] order-1">
+      <div class="w-full h-full relative flex items-end">
+        <img
+          src="https://firebasestorage.googleapis.com/v0/b/characterstore-32051.appspot.com/o/charactors%2Fbackground%2FDashParr.svg?alt=media&token=e6b89eb1-b244-472e-a4fd-d7a4053ef915"
+          alt=""
+          class="absolute"
+        />
+        <!-- imgCharacter -->
+        <img
+          src="https://firebasestorage.googleapis.com/v0/b/characterstore-32051.appspot.com/o/charactors%2FimgUrl%2FDash%20Parr.svg?alt=media&token=294e45ee-cf1d-47ed-b97f-1142f2f7e3f4"
+          alt=""
+          class="absolute scale-[67%] lg:scale-[100%] lg:mb-[120px] lg:translate-x-1/2"
+        />
+
+        <div
+          *ngFor="let lastest of lastestCharacter"
+          class="text-white absolute items-center w-full lg:h-[120px] h-[90px] px-[28px] lg:px-[60px] flex justify-between"
+        >
+          <div class="">
+            <p class="font-bold text-[24px] lg:text-[28px]">
+              {{ lastest.name }}
+            </p>
+
+            <div class="flex items-center">
+              <p class="lg:text-[14px] text-[12px] font-light">
+                {{ lastest.type }}:
+              </p>
+              <p
+                class="lg:ml-[28px] ml-[14px] font-bold text-[14px] lg:text-[16px]"
+              >
+                {{ lastest.namemovie }}
+              </p>
+            </div>
+          </div>
+          <div
+          class="flex justify-center bg-cover items-center h-[50px] w-[50px] lg:w-[60px] lg:h-[60px] hover:border-[0px] border-[1px] border-white rounded-[10px] hover:bg-[url('/assets/maincharacter/shoppingcart.svg')] relative group"
+        >
+          <p
+            class="lg:text-[14px] text-[12px] font-bold group-hover:hidden"
+          >
+            ${{ lastest.price }}
+          </p>
+        </div>
+        </div>
       </div>
     </div>
   </div>

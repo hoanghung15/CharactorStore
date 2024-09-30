@@ -29,16 +29,20 @@
     <div
       class="xl:w-[452px] text-white text-[10px] lg:text-[16px] font-bold justify-between items-center h-[50px] hidden xl:flex"
     >
-      <p class="cursor-pointer">Music</p>
+      <p class="cursor-pointer">About</p>
       <p class="cursor-pointer" routerLink="/maincharacter">Character</p>
-      <p class="cursor-pointer">Design</p>
+      <p class="cursor-pointer">Contact</p>
     </div>
 
     <div
       routerLink="/signin"
       class="cursor-pointer w-[50px] flex justify-center items-center h-[24px] rounded-[7px] border-[1px] border-white sm:w-[78px] sm:h-[36px] lg:h-[36px]"
     >
-      <p class="text-[10px] text-white font-bold sm:text-[16px]">Sign in</p>
+      <a
+        href="https://www.youtube.com/watch?v=mZ5up0fBj4M"
+        class="text-[10px] text-white font-bold sm:text-[16px]"
+        >Join</a
+      >
     </div>
   </div>
 
@@ -52,8 +56,14 @@
       src="./assets/header/close.svg"
       alt="Close Menu Icon"
     />
-    <a href="" class="mt-9 block">Music</a>
-    <a href="" class="mt-9 block" routerLink="/maincharacter">Character</a>
-    <a href="" class="mt-9 block">Design</a>
+    <a href="" routerLink="/music" class="mt-9 block">About</a>
+    <a
+      href=""
+      class="mt-9 block"
+      (click)="testclick('maincharacter')"
+      routerLink="/maincharacter"
+      >Multimedia</a
+    >
+    <a href="" class="mt-9 block">Contact</a>
   </div>
 </header>

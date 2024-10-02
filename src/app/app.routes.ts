@@ -6,6 +6,7 @@ import { MaincharacterComponent } from './maincharacter/maincharacter.component'
 import { authGuard } from './auth.guard';
 import { TestComponent } from './test/test.component';
 import { MusicComponent } from './music/music.component';
+import { CharacterdetailComponent } from './characterdetail/characterdetail.component';
 
 export const routes: Routes = [
   {
@@ -26,7 +27,7 @@ export const routes: Routes = [
     canActivate: [authGuard],
   },
   {
-    path: 'signin/testr',
+    path: 'test',
     component: TestComponent,
   },
   {
@@ -37,5 +38,9 @@ export const routes: Routes = [
     path: 'music',
     component: MusicComponent,
     canActivate: [authGuard],
+  },
+  {
+    path: 'characterdetail',
+    component: CharacterdetailComponent,
   },
 ];

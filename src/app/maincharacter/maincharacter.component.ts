@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { MainheaderComponent } from '../mainheader/mainheader.component';
-import { RouterOutlet } from '@angular/router';
+import { RouterLink, RouterOutlet } from '@angular/router';
 import { HttpClient, HttpClientModule } from '@angular/common/http'; // Import HttpClient để gọi API
 import { Observable } from 'rxjs'; // Import Observable để xử lý dữ liệu bất đồng bộ
 import { CommonModule, NgClass } from '@angular/common';
 import { HammerModule } from '@angular/platform-browser';
+import { MainfooterComponent } from '../mainfooter/mainfooter.component';
 
 @Component({
   selector: 'app-maincharacter',
@@ -16,13 +17,16 @@ import { HammerModule } from '@angular/platform-browser';
     RouterOutlet,
     HttpClientModule,
     HammerModule,
+    MainfooterComponent,
+    RouterLink,
   ],
   templateUrl: './maincharacter.component.html',
   styleUrls: ['./maincharacter.component.css'],
 })
 export class MaincharacterComponent implements OnInit {
   characters: any[] = [];
-  lastestCharacter: any[] = []; // List of names from API
+  lastestCharacter: any[] = [];
+  specialCharacter: any[] = []; // List of names from API
   currentIndex: number = 0;
   translateX: number = 0;
   itemWidth: number = 360; // Width of one item including margin
@@ -39,8 +43,12 @@ export class MaincharacterComponent implements OnInit {
         this.lastestCharacter = this.mapCharacterData(
           response.lastestCharacter
         );
+        this.specialCharacter = this.mapCharacterData(
+          response.specialCharacter
+        );
         console.log(this.characters);
         console.log(this.lastestCharacter);
+        console.log(this.specialCharacter);
       },
       (error) => {
         console.error('Error fetching data:', error);
@@ -90,5 +98,8 @@ export class MaincharacterComponent implements OnInit {
       this.currentIndex--;
       this.translateX += this.itemWidth;
     }
+  }
+  setCharacterID(characterID: any) {
+    sessionStorage.setItem('characterID', characterID);
   }
 }

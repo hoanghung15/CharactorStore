@@ -66,6 +66,8 @@
       [ngStyle]="{ transform: 'translateX(' + translateX + 'px)' }"
     >
       <div
+        routerLink="/characterdetail"
+        (click)="setCharacterID(character.id)"
         class="item min-w-full lg:min-w-[300px] h-[450px] mr-[10px] lg:mr-[90px]"
         *ngFor="let character of characters; let i = index"
       >
@@ -156,11 +158,12 @@
           <span class="text-[#D31101] font-bold">Dash Parr</span> is a
           super-fast kid from The Incredibles. He's energetic, mischievous, and
           the son of Mr. Incredible and Elastigirl.
-        </p>
-        <button
+        </p> 
+        <button routerLink="/characterdetail"
+        (click)="setCharacterID(lastestCharacter[0].id)"
           class="lg:rounded-[22px] mt-[16px] w-[100px] h-[32px] bg-gradient-to-r from-[#c10f00] to-[#80150b] rounded-[6px] lg:w-[218.88px] lg:h-[70px] lg:mt-[62px]"
         >
-          <span
+          <span 
             id="test"
             class="text-white text-[12px] lg:text-[20px] font-thin"
             >Read more</span
@@ -169,21 +172,21 @@
       </div>
     </div>
     <div class="w-full lg:w-[45%] h-[400px] lg:h-[700px] order-1">
-      <div class="w-full h-full relative flex items-end">
-        <img
-          src="https://firebasestorage.googleapis.com/v0/b/characterstore-32051.appspot.com/o/charactors%2Fbackground%2FDashParr.svg?alt=media&token=e6b89eb1-b244-472e-a4fd-d7a4053ef915"
-          alt=""
-          class="absolute"
-        />
+      <div
+        routerLink="/characterdetail"
+        (click)="setCharacterID(lastest.id)"
+        *ngFor="let lastest of lastestCharacter"
+        class="w-full h-full relative flex items-end"
+      >
+        <img src="{{ lastest.bgUrlTop }}" alt="" class="absolute" />
         <!-- imgCharacter -->
         <img
-          src="https://firebasestorage.googleapis.com/v0/b/characterstore-32051.appspot.com/o/charactors%2FimgUrl%2FDash%20Parr.svg?alt=media&token=294e45ee-cf1d-47ed-b97f-1142f2f7e3f4"
+          src="{{ lastest.imgUrl }}"
           alt=""
-          class="absolute scale-[67%] lg:scale-[100%] lg:mb-[120px] lg:translate-x-1/2"
+          class="absolute scale-[67%] lg:scale-[120%] lg:mb-[120px] lg:translate-x-1/2"
         />
 
         <div
-          *ngFor="let lastest of lastestCharacter"
           class="text-white absolute items-center w-full lg:h-[120px] h-[90px] px-[28px] lg:px-[60px] flex justify-between"
         >
           <div class="">
@@ -203,16 +206,95 @@
             </div>
           </div>
           <div
-          class="flex justify-center bg-cover items-center h-[50px] w-[50px] lg:w-[60px] lg:h-[60px] hover:border-[0px] border-[1px] border-white rounded-[10px] hover:bg-[url('/assets/maincharacter/shoppingcart.svg')] relative group"
-        >
-          <p
-            class="lg:text-[14px] text-[12px] font-bold group-hover:hidden"
+            class="flex justify-center bg-cover items-center h-[50px] w-[50px] lg:w-[60px] lg:h-[60px] hover:border-[0px] border-[1px] border-white rounded-[10px] hover:bg-[url('/assets/maincharacter/shoppingcart.svg')] relative group"
           >
-            ${{ lastest.price }}
-          </p>
+            <p class="lg:text-[14px] text-[12px] font-bold group-hover:hidden">
+              ${{ lastest.price }}
+            </p>
+          </div>
         </div>
+      </div>
+    </div>
+  </div>
+  <!-- special model -->
+  <div
+    class="mt-[60px] lg:mt-[60px] w-full lg:flex lg:justify-between items-center"
+  >
+    <div class="w-full lg:w-[35%] text-center lg:text-left">
+      <h1 class="text-[20px] lg:text-[48px] text-[#0D6098]">
+        THE SPECIAL MODEL OF THE WEEK
+      </h1>
+      <p class="px-[20px] lg:px-[0px]">
+        <span class="text-[#417964] lg:text-[24px] font-bold"
+          >Vanellope von Schweetz</span
+        >
+        is a character in the film Wreck-It Ralph, created by Walt Disney
+        Animation Studios. The film was released by Walt Disney Pictures.
+        Vanellope is a racer in the video game "Sugar Rush" and plays an
+        important role in both installments of the series.
+      </p>
+      <button routerLink="/characterdetail"
+      (click)="setCharacterID(specialCharacter[0].id)"
+        class="lg:rounded-[22px] mt-[16px] w-[100px] h-[32px] bg-gradient-to-r from-[#347B60] to-[#7FDFBB] rounded-[6px] lg:w-[218.88px] lg:h-[70px] lg:mt-[62px]"
+      > 
+        <span id="test" class="text-white text-[12px] lg:text-[20px] font-thin"
+          >Read more</span
+        >
+      </button>
+    </div>
+    <div
+      class="w-full lg:w-[65%] px-[20px]" routerLink="/characterdetail"
+      (click)="setCharacterID(special.id)"
+      *ngFor="let special of specialCharacter"
+    >
+      <div class="relative w-full lg:h-[550px] h-[500px]">
+        <div class="=w-full lg:h-[550px] h-[420px] relative">
+          <div class="absolute bottom-0 right-0">
+            <div class="relative">
+              <img
+                src="https://firebasestorage.googleapis.com/v0/b/characterstore-32051.appspot.com/o/tmp%2Ftmpbg%2FVanellopeBg.svg?alt=media&token=0d572112-3c3d-4cb3-ae22-54cb5ce58928"
+                alt=""
+                class="lg:scale-[100%] scale-[50%] translate-x-1/4 -translate-x-y-1/8 lg:translate-x-0 lg:translate-y-0"
+              />
+              <div
+                class="items-center absolute text-white lg:-translate-y-[0px] -translate-y-[5px] lg:w-full w-[50%] px-[20px] lg:px-[32px] right-0 -mt-[100px] flex justify-between"
+              >
+                <div class="">
+                  <h1 class="text-[12px] font-bold lg:text-[28px]">
+                    {{ special.name }}
+                  </h1>
+                  <div class="flex items-center">
+                    <p class="text-[10px] lg:text-[14px]">
+                      {{ special.type }}:
+                    </p>
+                    <p
+                      class="lg:ml-[28px] lg:text-[24px] text-[8px] font-bold ml-[14px]"
+                    >
+                      Insight
+                    </p>
+                  </div>
+                </div>
+                <div
+                  class="flex justify-center bg-cover items-center h-[40px] w-[40px] lg:w-[60px] lg:h-[60px] hover:border-[0px] border-[1px] border-white rounded-[10px] hover:bg-[url('/assets/maincharacter/shoppingcart.svg')] relative group"
+                >
+                  <p
+                    class="lg:text-[14px] text-[10px] font-bold group-hover:hidden"
+                  >
+                    ${{ special.price }}
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <img
+            src="https://firebasestorage.googleapis.com/v0/b/characterstore-32051.appspot.com/o/tmp%2Ftmpbg%2FVanellopeSpeical.svg?alt=media&token=5cb7962f-b5c5-4605-a669-36249e2c7617"
+            alt=""
+            class="ml-[30px] lg:ml-[225px] lg:-translate-y-[0px] -translate-y-[50px] scale-[50%] lg:scale-[100%]"
+          />
         </div>
       </div>
     </div>
   </div>
 </div>
+<app-mainfooter></app-mainfooter>

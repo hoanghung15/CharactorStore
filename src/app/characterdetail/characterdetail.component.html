@@ -1,0 +1,103 @@
+<app-mainheader></app-mainheader>
+<div class="w-full h-[1150px] bg-[#F9FAFC] lg:px-[120px] px-10">
+  <div class="w-[100%] h-full pt-[60px]" *ngIf="character">
+    <div
+      class="w-full px-[20px] lg:px-[120px] h-full bg-cover rounded-br-[32px] Lg:rounded-br-[60px] rounded-tl-[32px] lg:rounded-tl-[60px]"
+      [ngStyle]="{
+        'background-image': 'url(' + character.urlBg + ')',
+       
+      }"
+    >
+      <div class="lg:flex w-full lg:justify-between">
+        <!-- text -->
+        <div class="text-white pt-[32px] order-2 lg:mt-[50px] lg:w-[50%]">
+          <h1 class="lg:text-[48px]">{{ character.name }}</h1>
+
+          <div class="flex items-center">
+            <p class="text-[12px] lg:text-[16px]">{{ character.type }}:</p>
+            <p class="lg:ml-[24px] ml-[12px] font-bold">
+              {{ character.namemovie }}
+            </p>
+          </div>
+
+          <p class="text-[12px] lg:text-[14px] lg:mt-[32px] mt-[12px]">
+            {{ character.describe }}
+          </p>
+        </div>
+        <!-- view img -->
+        <div class="lg:w-[30%] mt-[32px] order-1">
+          <img
+            src="{{ character.imgUrl }}"
+            alt=""
+            class="mx-auto pt-[20px] lg:scale-[150%]"
+          />
+          <div
+            class="rounded-[6px] lg:mt-[200px] mt-[50px] w-[80%] lg:w-[300px] lg:h-[56px] h-[32px] bg-white mx-auto px-[12px] lg:px-[32px] flex justify-between items-center"
+          >
+            <img
+              src="./assets/maincharacter/bxs_layer.svg"
+              alt=""
+              class="scale-[50%] lg:scale-[80%]"
+            />
+            <p class="font-bold text-[#002D4A] text-[12px] lg:text-[16px]">
+              INSPECT THE 3D MODEL
+            </p>
+          </div>
+        </div>
+      </div>
+      <!-- properti -->
+      <div class="flex justify-between">
+        <div class="lg:w-[30%]"></div>
+        <div class="w-full lg:w-[50%] text-white lg:mt-[0px] mt-[32px]">
+          <p class="font-bold text-[16px]">Properties</p>
+          <div class="space-y-[12px] text-[12px] lg:text-[16px] mt-[24px]">
+            <div class="flex justify-between">
+              <p class="">Download Size</p>
+              <p class="">{{ character.downloadsize }}MB</p>
+            </div>
+            <div class="flex justify-between">
+              <p class="">Download Size</p>
+              <p class="">{{ character.texture }}</p>
+            </div>
+            <div class="flex justify-between">
+              <p class="">Meterials</p>
+              <p class="">{{ character.materials }}</p>
+            </div>
+            <div class="flex justify-between">
+              <p class="">UV Layers</p>
+              <p class="">{{ character.uvlayer }}</p>
+            </div>
+            <div class="flex justify-between">
+              <p class="">Vertices</p>
+              <p class="">{{ character.vertices }}</p>
+            </div>
+            <div class="flex justify-between">
+              <p class="">Rigged geometries</p>
+              <p class="">{{ character.rigged }}</p>
+            </div>
+          </div>
+          <div class="w-full h-[1px] bg-white mt-[32px] lg:mt-[48px]"></div>
+          <div
+            class="text-black w-full h-[32px] bg-white lg:h-[56px] rounded-[12px] mt-[24px] flex justify-between"
+          >
+            <div
+              class="px-[20px] lg:text-[16px] items-center text-[12px] w-[50%] h-full flex justify-between"
+            >
+              <p class="">Total:</p>
+              <p class="font-bold">${{ character.price }}</p>
+            </div>
+            <div class="lg:w-[40%] w-[60%] h-full lg:px-[20px] px-5 py-[5px]">
+              <div
+                class="px-[10px] flex items-center text-white justify-center rounded-[8px] w-full h-full bg-[#197FB9] lg:rounded-[12px]"
+              >
+                <p class="text-[8px] font-bold lg:text-[14px]">ADD TO CART</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- button -->
+    </div>
+  </div>
+</div>
+<app-mainfooter></app-mainfooter>

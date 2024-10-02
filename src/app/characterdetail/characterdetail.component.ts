@@ -64,6 +64,7 @@ export class CharacterdetailComponent implements OnInit {
       (response: any) => {
         console.log('Đã thêm vào giỏ hàng:', response);
         alert('Thêm vào giỏ hàng thành công!');
+        location.reload();
       },
       (error: any) => {
         console.error('Có lỗi khi thêm vào giỏ hàng:', error);

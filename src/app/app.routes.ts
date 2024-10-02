@@ -7,6 +7,7 @@ import { authGuard } from './auth.guard';
 import { TestComponent } from './test/test.component';
 import { MusicComponent } from './music/music.component';
 import { CharacterdetailComponent } from './characterdetail/characterdetail.component';
+import { AllmodelComponent } from './allmodel/allmodel.component';
 
 export const routes: Routes = [
   {
@@ -42,5 +43,9 @@ export const routes: Routes = [
   {
     path: 'characterdetail',
     component: CharacterdetailComponent,
+  },
+  {
+    path: 'allmodel',
+    component: AllmodelComponent,
   },
 ];

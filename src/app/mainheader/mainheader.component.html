@@ -35,11 +35,14 @@
     </div>
     <div class="flex" (click)="onToggleShoppingCard()">
       <img
+        
         src="./assets/header/shopping.svg"
         alt=""
-        class="lg:scale-[100%] scale-[100%]"
+        class="lg:scale-[100%] scale-[100%] cursor-pointer"
       />
-      <h1 class="text-[#E31300] -mt-[10px]">{{ charactersIncart.length }}</h1>
+      <h1 *ngIf="charactersIncart.length" class="text-[#E31300] -mt-[10px]">
+        {{ charactersIncart.length }}
+      </h1>
     </div>
 
     <div
@@ -52,7 +55,7 @@
   <!-- Toggling Menu Div -->
   <div
     *ngIf="isOpenMenu"
-    class="absolute top-0 left-0 h-[300px] bg-[#3E3E3E] w-full pl-5 pt-11 text-white font-bold text-[14px] z-10 sm:pl-10 xl:hidden"
+    class="absolute top-0 left-0 h-[300px] bg-[#3E3E3E] w-full pl-5 pt-11 text-white font-bold text-[14px] z-20 sm:pl-10 xl:hidden"
   >
     <img
       (click)="onToggleMenu()"
@@ -77,7 +80,7 @@
 
     <div class="w-full h-[1px] bg-[#BDBDBD] mt-[12px]"></div>
     <div class="w-full flex" *ngIf="!charactersIncart.length">
-      <img src="./assets/header/emptycart.svg" alt="" class="mx-auto my-auto" />
+      <img routerLink="/maincharacter" src="./assets/header/emptycart.svg" alt="" class="mx-auto my-auto" />
     </div>
     <div class="overflow-y-auto">
       <div class="w-full mt-[20px]" *ngFor="let character of charactersIncart">
@@ -105,6 +108,7 @@
           <div class="text-right h-full w-[20%] lg:mt-[12px]">
             <div class="w-full flex justify-end items-end">
               <img
+                (click)="deleteItem(character.id)"
                 src="./assets/header/tabler_x.svg"
                 alt=""
                 class="scale-[70%] cursor-pointer"
@@ -116,7 +120,7 @@
         </div>
       </div>
       <div
-        class="w-full lg:mt-[32px] mt-[32px] flex justify-between"
+        class="w-full lg:mt-[32px] text[#002D4A] mt-[32px] flex justify-between"
         *ngIf="charactersIncart.length"
       >
         <p class="">Total:</p>

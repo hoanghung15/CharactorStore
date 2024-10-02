@@ -25,6 +25,7 @@ import { MainfooterComponent } from '../mainfooter/mainfooter.component';
 })
 export class MaincharacterComponent implements OnInit {
   characters: any[] = [];
+  
   lastestCharacter: any[] = [];
   specialCharacter: any[] = []; // List of names from API
   currentIndex: number = 0;

@@ -81,4 +81,32 @@ export class MainheaderComponent implements OnInit {
       this.totalPrice = 0;
     }
   }
+  deleteItem(characterID: any): void {
+    if (this.userID && characterID) {
+      const payload = {
+        userID: this.userID,
+        characterID: characterID,
+      };
+
+      this.http
+        .post('http://localhost/testAPI/apiDeleteCharacter.php', payload)
+        .subscribe(
+          (response: any) => {
+            if (response.success) {
+              // Xóa nhân vật khỏi giỏ hàng trên frontend
+              this.charactersIncart = this.charactersIncart.filter(
+                (character) => character.id !== characterID
+              );
+              this.totalPriceCal(); // Cập nhật lại tổng giá
+              console.log('Item deleted successfully');
+            } else {
+              console.log('Error deleting item');
+            }
+          },
+          (error) => {
+            console.error('Error:', error);
+          }
+        );
+    }
+  }
 }

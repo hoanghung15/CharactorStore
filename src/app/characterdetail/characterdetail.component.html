@@ -86,16 +86,17 @@
           </div>
           <div class="w-full h-[1px] bg-white mt-[32px] lg:mt-[48px]"></div>
           <div
-            class="text-black w-full h-[32px] bg-white lg:h-[56px] rounded-[12px] mt-[24px] flex justify-between"
+            class="text-black w-full h-[32px] bg-white lg:h-[56px]  rounded-[12px] mt-[24px] flex justify-between"
           >
             <div
-              class="px-[20px] lg:text-[16px] items-center text-[12px] w-[50%] h-full flex justify-between"
+              class=" px-[20px] lg:text-[16px] items-center text-[12px] w-[50%] h-full flex justify-between"
             >
               <p class="">Total:</p>
               <p class="font-bold">${{ character.price }}</p>
             </div>
             <div class="lg:w-[40%] w-[60%] h-full lg:px-[20px] px-5 py-[5px]">
-              <div (click)="addToCart()"
+              <div
+                (click)="addToCart()"
                 class="px-[10px] flex items-center text-white justify-center rounded-[8px] w-full h-full bg-[#197FB9] lg:rounded-[12px]"
               >
                 <p class="text-[8px] font-bold lg:text-[14px]">ADD TO CART</p>

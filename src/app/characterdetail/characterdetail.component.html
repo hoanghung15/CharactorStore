@@ -27,11 +27,19 @@
         <!-- view img -->
         <div class="lg:w-[30%] mt-[32px] order-1">
           <img
+            *ngIf="!isViewModel3D"
             src="{{ character.imgUrl }}"
             alt=""
             class="mx-auto pt-[20px] lg:scale-[150%]"
           />
+          <iframe
+            *ngIf="isViewModel3D"
+            [src]="photoURL()"
+            frameborder="0"
+            class="w-full h-full scale-[150%]"
+          ></iframe>
           <div
+            (click)="clickViewModel3D()"
             class="rounded-[6px] lg:mt-[200px] mt-[50px] w-[80%] lg:w-[300px] lg:h-[56px] h-[32px] bg-white mx-auto px-[12px] lg:px-[32px] flex justify-between items-center"
           >
             <img
@@ -87,7 +95,7 @@
               <p class="font-bold">${{ character.price }}</p>
             </div>
             <div class="lg:w-[40%] w-[60%] h-full lg:px-[20px] px-5 py-[5px]">
-              <div
+              <div (click)="addToCart()"
                 class="px-[10px] flex items-center text-white justify-center rounded-[8px] w-full h-full bg-[#197FB9] lg:rounded-[12px]"
               >
                 <p class="text-[8px] font-bold lg:text-[14px]">ADD TO CART</p>

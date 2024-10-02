@@ -43,7 +43,7 @@
       <iframe
         src="https://my.spline.design/happyrobotbutton-93eb045bff370eaa0f37720b251a2904/"
         frameborder="0"
-        class="h-full w-full lg:scale-[150%]"
+        class="h-full w-full lg:scale-[120%]"
       ></iframe>
     </div>
   </div>
@@ -68,7 +68,7 @@
       <div
         routerLink="/characterdetail"
         (click)="setCharacterID(character.id)"
-        class="item min-w-full lg:min-w-[300px] h-[450px] mr-[10px] lg:mr-[90px]"
+        class="item min-w-full lg:min-w-[300px] h-[450px] mr-[10px] lg:mr-[90px] hover:-translate-y-[20px]"
         *ngFor="let character of characters; let i = index"
       >
         <div
@@ -158,12 +158,13 @@
           <span class="text-[#D31101] font-bold">Dash Parr</span> is a
           super-fast kid from The Incredibles. He's energetic, mischievous, and
           the son of Mr. Incredible and Elastigirl.
-        </p> 
-        <button routerLink="/characterdetail"
-        (click)="setCharacterID(lastestCharacter[0].id)"
+        </p>
+        <button
+          routerLink="/characterdetail"
+          (click)="setCharacterID(lastestCharacter[0].id)"
           class="lg:rounded-[22px] mt-[16px] w-[100px] h-[32px] bg-gradient-to-r from-[#c10f00] to-[#80150b] rounded-[6px] lg:w-[218.88px] lg:h-[70px] lg:mt-[62px]"
         >
-          <span 
+          <span
             id="test"
             class="text-white text-[12px] lg:text-[20px] font-thin"
             >Read more</span
@@ -233,17 +234,19 @@
         Vanellope is a racer in the video game "Sugar Rush" and plays an
         important role in both installments of the series.
       </p>
-      <button routerLink="/characterdetail"
-      (click)="setCharacterID(specialCharacter[0].id)"
+      <button
+        routerLink="/characterdetail"
+        (click)="setCharacterID(specialCharacter[0].id)"
         class="lg:rounded-[22px] mt-[16px] w-[100px] h-[32px] bg-gradient-to-r from-[#347B60] to-[#7FDFBB] rounded-[6px] lg:w-[218.88px] lg:h-[70px] lg:mt-[62px]"
-      > 
+      >
         <span id="test" class="text-white text-[12px] lg:text-[20px] font-thin"
           >Read more</span
         >
       </button>
     </div>
     <div
-      class="w-full lg:w-[65%] px-[20px]" routerLink="/characterdetail"
+      class="w-full lg:w-[65%] px-[20px]"
+      routerLink="/characterdetail"
       (click)="setCharacterID(special.id)"
       *ngFor="let special of specialCharacter"
     >

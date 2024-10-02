@@ -33,11 +33,15 @@
       <p class="cursor-pointer" routerLink="/maincharacter">Character</p>
       <p class="cursor-pointer">Design</p>
     </div>
-    <img
-      src="./assets/header/shopping.svg"
-      alt=""
-      class="lg:scale-[100%] scale-[90%]"
-    />
+    <div class="flex" (click)="onToggleShoppingCard()">
+      <img
+        src="./assets/header/shopping.svg"
+        alt=""
+        class="lg:scale-[100%] scale-[100%]"
+      />
+      <h1 class="text-[#E31300] -mt-[10px]">{{ charactersIncart.length }}</h1>
+    </div>
+
     <div
       class="scale-[60%] lg:scale-[100%] cursor-pointer w-[50px] flex justify-center items-center h-[24px] rounded-[7px] sm:w-[78px] sm:h-[36px] lg:h-[36px]"
     >
@@ -58,5 +62,72 @@
     <a href="" class="mt-9 block">Music</a>
     <a href="" class="mt-9 block" routerLink="/maincharacter">Character</a>
     <a href="" class="mt-9 block">Design</a>
+  </div>
+  <!-- shoppingcart -->
+  <div
+    *ngIf="isOpenShoppingCart"
+    class="absolute top-[100px] right-0 lg:right-[120px] bg-white shadow-lg w-full lg:w-[40%] px-5 pt-[20px] font-bold text-[14px] z-10 sm:px-10"
+  >
+    <div class="w-full h-[50px] items-center flex justify-between">
+      <p class="font-bold lg:text-[20px]">Shopping Cart</p>
+      <p (click)="onToggleShoppingCard()" class="underline cursor-pointer">
+        Close
+      </p>
+    </div>
+
+    <div class="w-full h-[1px] bg-[#BDBDBD] mt-[12px]"></div>
+    <div class="w-full flex" *ngIf="!charactersIncart.length">
+      <img src="./assets/header/emptycart.svg" alt="" class="mx-auto my-auto" />
+    </div>
+    <div class="overflow-y-auto">
+      <div class="w-full mt-[20px]" *ngFor="let character of charactersIncart">
+        <div class="w-full flex justify-between">
+          <div class="flex w-[70%] lg:h-[70px] h-[50px]">
+            <div
+              class="w-[50px] h-[50px] lg:w-[80px] lg:h-[80px] rounded-[12px] flex justify-between"
+              [ngStyle]="{
+                'background-image': 'url(' + character.urlBg + ')',
+                'background-size': 'cover'
+              }"
+            >
+              <img
+                src="{{ character.imgUrl }}"
+                alt=""
+                class="object-fill w-full h-full"
+              />
+            </div>
+            <div class="h-full lg:translate-y-1/4 ml-[12px] lg:ml-[24px]">
+              <p class="">{{ character.name }}</p>
+              <p class="font-light">{{ character.typeModel }}</p>
+            </div>
+          </div>
+
+          <div class="text-right h-full w-[20%] lg:mt-[12px]">
+            <div class="w-full flex justify-end items-end">
+              <img
+                src="./assets/header/tabler_x.svg"
+                alt=""
+                class="scale-[70%] cursor-pointer"
+              />
+            </div>
+
+            <p class="text-[12px]">${{ character.price }}</p>
+          </div>
+        </div>
+      </div>
+      <div
+        class="w-full lg:mt-[32px] mt-[32px] flex justify-between"
+        *ngIf="charactersIncart.length"
+      >
+        <p class="">Total:</p>
+        <p class="text-[18px]">${{ totalPrice }}</p>
+      </div>
+      <div
+        *ngIf="charactersIncart.length"
+        class="flex justify-center items-center w-full h-[32px] lg:h-[56px] bg-[#0D6098] rounded-lg bottom-[10] mt-[32px] mb-[56px]"
+      >
+        <p class="text-white font-bold">GO TO CHECKOUT</p>
+      </div>
+    </div>
   </div>
 </header>

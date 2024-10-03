@@ -8,10 +8,16 @@ import { TestComponent } from './test/test.component';
 import { MusicComponent } from './music/music.component';
 import { CharacterdetailComponent } from './characterdetail/characterdetail.component';
 import { AllmodelComponent } from './allmodel/allmodel.component';
+import { CheckoutComponent } from './checkout/checkout.component';
+import { PaymentComponent } from './payment/payment.component';
 
 export const routes: Routes = [
   {
     path: '',
+    component: HomepageComponent,
+  },
+  {
+    path: 'homepage',
     component: HomepageComponent,
   },
   {
@@ -47,5 +53,13 @@ export const routes: Routes = [
   {
     path: 'allmodel',
     component: AllmodelComponent,
+  },
+  {
+    path: 'checkout',
+    component: CheckoutComponent,
+  },
+  {
+    path: 'payment',
+    component: PaymentComponent,
   },
 ];

@@ -27,6 +27,8 @@ export class SigninComponent {
       }
       sessionStorage.setItem('userID', respone.user_id);
       sessionStorage.setItem('avtUrl', respone.avtUrl);
+      sessionStorage.setItem('firstname', respone.firstname);
+      sessionStorage.setItem('lastname', respone.lastname);
     });
   }
 }

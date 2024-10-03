@@ -8,7 +8,7 @@
       alt="Menu Icon"
       class="sm:h-[30px] xl:hidden"
     />
-    <h1 class="cursor-pointer text-[#002D4A] text-[14px] sm:text-[24px]">
+    <h1 routerLink="/homepage" class="cursor-pointer text-[#002D4A] text-[14px] sm:text-[24px]">
       ProMediaX
     </h1>
 
@@ -35,7 +35,6 @@
     </div>
     <div class="flex" (click)="onToggleShoppingCard()">
       <img
-        
         src="./assets/header/shopping.svg"
         alt=""
         class="lg:scale-[100%] scale-[100%] cursor-pointer"
@@ -80,7 +79,12 @@
 
     <div class="w-full h-[1px] bg-[#BDBDBD] mt-[12px]"></div>
     <div class="w-full flex" *ngIf="!charactersIncart.length">
-      <img routerLink="/maincharacter" src="./assets/header/emptycart.svg" alt="" class="mx-auto my-auto" />
+      <img
+        routerLink="/maincharacter"
+        src="./assets/header/emptycart.svg"
+        alt=""
+        class="mx-auto my-auto"
+      />
     </div>
     <div class="overflow-y-auto">
       <div class="w-full mt-[20px]" *ngFor="let character of charactersIncart">
@@ -127,7 +131,9 @@
         <p class="text-[18px]">${{ totalPrice }}</p>
       </div>
       <div
+        routerLink="/checkout"
         *ngIf="charactersIncart.length"
+        (click)="setShoppingCartId(charactersIncart,userID)"
         class="flex justify-center items-center w-full h-[32px] lg:h-[56px] bg-[#0D6098] rounded-lg bottom-[10] mt-[32px] mb-[56px]"
       >
         <p class="text-white font-bold">GO TO CHECKOUT</p>

@@ -1,21 +1,29 @@
-import { CommonModule, NgClass } from '@angular/common';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { RouterLink, RouterOutlet } from '@angular/router';
+import { MainheaderComponent } from '../mainheader/mainheader.component';
+import { MainfooterComponent } from '../mainfooter/mainfooter.component';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { CommonModule, NgClass } from '@angular/common';
+import { RouterLink } from '@angular/router';
 
 @Component({
-  selector: 'app-mainheader',
+  selector: 'app-checkout',
   standalone: true,
-  imports: [RouterLink, RouterOutlet, NgClass, CommonModule, HttpClientModule],
-  templateUrl: './mainheader.component.html',
-  styleUrl: './mainheader.component.css',
+  imports: [
+    MainheaderComponent,
+    MainfooterComponent,
+    NgClass,
+    CommonModule,
+    RouterLink,
+  ],
+  templateUrl: './checkout.component.html',
+  styleUrl: './checkout.component.css',
 })
-export class MainheaderComponent implements OnInit {
-  avtUrl = sessionStorage.getItem('avtUrl');
-  isOpenShoppingCart = false;
-  isOpenMenu = false;
+export class CheckoutComponent implements OnInit {
   totalPrice: number | null = null;
   charactersIncart: any[] = [];
+  tax = 0.8;
+  totalBTax: number | null = 0;
   userID: any = sessionStorage.getItem('userID');
   private apiUrl = 'http://localhost/testAPI/apiCharacterIncart.php';
   constructor(private http: HttpClient) {}
@@ -23,14 +31,7 @@ export class MainheaderComponent implements OnInit {
   ngOnInit(): void {
     this.getShoppingCartCharacters();
   }
-  onToggleMenu() {
-    this.isOpenMenu = !this.isOpenMenu;
-    console.log(this.avtUrl);
-  }
-  onToggleShoppingCard() {
-    this.isOpenShoppingCart = !this.isOpenShoppingCart;
-    console.log('dm' + this.userID);
-  }
+
   mapCharacterData(characterData: any[]): any[] {
     return characterData.map((character: any) => ({
       id: character.id,
@@ -69,6 +70,7 @@ export class MainheaderComponent implements OnInit {
   totalPriceCal(): void {
     this.totalPrice = this.charactersIncart.reduce((sum, character) => {
       const price = parseFloat(character.price) || 0; // Chuyển đổi price thành float
+      this.totalBTax = parseFloat((sum + price + this.tax).toFixed(2));
       return sum + price; // Cộng giá của từng nhân vật
     }, 0);
 
@@ -79,7 +81,9 @@ export class MainheaderComponent implements OnInit {
     } else {
       // Nếu totalPrice là null, gán nó thành 0
       this.totalPrice = 0;
+      this.totalBTax = 0;
     }
+    location.reload;
   }
   deleteItem(characterID: any): void {
     if (this.userID && characterID) {
@@ -108,31 +112,13 @@ export class MainheaderComponent implements OnInit {
           }
         );
     }
-    location.reload
+    location.reload;
   }
-  setShoppingCartId(charactersIncart: any, userID: any) {
-    if (charactersIncart && charactersIncart.length > 0 && userID) {
-      const payload = {
-        userID: this.userID,
-        characters: this.charactersIncart.map(character => character.id),  // Lấy danh sách character_id
-      };
-  
-      // Gửi dữ liệu qua API để insert vào bảng payment
-      this.http.post('http://localhost/testAPI/apicheckout.php', payload)
-        .subscribe(
-          (response: any) => {
-            if (response.success) {
-              console.log('Payment record inserted successfully');
-              // Có thể điều hướng sang trang checkout hoặc thực hiện các hành động khác
-            } else {
-              console.log('Error inserting payment record');
-            }
-          },
-          (error) => {
-            console.error('Error:', error);
-          }
-        );
-    }
+  setInformation(country: any, city: any, street: any, postcode: any,note:any) {
+    sessionStorage.setItem('country', country);
+    sessionStorage.setItem('city', city);
+    sessionStorage.setItem('street', street);
+    sessionStorage.setItem('postcode', postcode);
+    sessionStorage.setItem('note', note);
   }
-  
 }

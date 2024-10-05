@@ -10,6 +10,7 @@ import { CharacterdetailComponent } from './characterdetail/characterdetail.comp
 import { AllmodelComponent } from './allmodel/allmodel.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { PaymentComponent } from './payment/payment.component';
+import { FilterSortComponent } from './filter-sort/filter-sort.component';
 
 export const routes: Routes = [
   {
@@ -61,5 +62,9 @@ export const routes: Routes = [
   {
     path: 'payment',
     component: PaymentComponent,
+  },
+  {
+    path: 'filtersort',
+    component: FilterSortComponent,
   },
 ];

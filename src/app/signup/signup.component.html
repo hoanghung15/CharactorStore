@@ -20,6 +20,7 @@
       <label for="" class="mt-[20px] block text-[12px] text-[#717171]">
         <span class="block lg:text-[16px]">First name</span>
         <input
+          #firstname
           type="text"
           class="lg:h-[48px] lg:mt-[8px] w-full pl-[20px] rounded-[6px] lg:w-[337px] h-[32px] bg-[#F0F0F0]"
         />
@@ -29,7 +30,8 @@
           >Last name</span
         >
         <input
-          type="password"
+          #lastname
+          type="type"
           class="lg:h-[48px] lg:mt-[8px] rounded-[6px] pl-[20px] w-full h-[32px] bg-[#F0F0F0]"
         />
       </label>
@@ -38,14 +40,15 @@
       <label for="" class="mt-[20px] block text-[12px] text-[#717171]">
         <span class="block lg:text-[16px]">Phone</span>
         <input
+          #phoneNumber
           type="text"
           class="lg:w-[337px] lg:h-[48px] lg:mt-[8px] pl-[20px] rounded-[6px] w-full h-[32px] bg-[#F0F0F0]"
         />
       </label>
       <label for="" class="mt-[20px] block text-[12px] text-[#717171]">
         <span class="lg:text-[16px] block text-[12px]">Email</span>
-        <input
-          type="password"
+        <input #email
+          type="email"
           class="lg:w-[337px] lg:h-[48px] lg:mt-[8px] rounded-[6px] pl-[20px] w-full h-[32px] bg-[#F0F0F0]"
         />
       </label>
@@ -53,21 +56,21 @@
     <div class="lg:flex lg:justify-between">
       <label for="" class="mt-[20px] block text-[12px] text-[#717171]">
         <span class="block lg:text-[16px]">Birth day</span>
-        <input
+        <input #brithday
           type="date"
           class="lg:w-[337px] lg:h-[48px] pr-5 lg:mt-[8px] pl-[20px] rounded-[6px] w-full h-[32px] bg-[#F0F0F0]"
         />
       </label>
       <label for="" class="mt-[20px] block text-[12px] text-[#717171]">
         <span class="lg:text-[16px] block text-[12px]">Password</span>
-        <input
+        <input #password
           type="password"
           class="lg:w-[337px] lg:h-[48px] lg:mt-[8px] rounded-[6px] pl-[20px] w-full h-[32px] bg-[#F0F0F0]"
         />
       </label>
     </div>
     <label for="" class="flex mt-[12px] lg:mt-[36px]">
-      <input type="checkbox" name="" id="" />
+      <input #tickbox type="checkbox" name="" id="" />
       <span class="lg:text-[16px] text-[10px] text-[#717171] ml-[10px]">
         I accepted the
         <span class="font-bold underline">Genaral Terms </span> and
@@ -77,7 +80,7 @@
     <div
       class="mt-[12px] lg:mt-[60px] space-y-1 lg:flex lg:justify-between lg:space-y-0 lg:items-center"
     >
-      <button
+      <button (click)="signup(firstname.value,lastname.value,phoneNumber.value,email.value,brithday.value,password.value,tickbox.value)"
         class="lg:w-[338px] lg:h-[48px] bg-[#0D6098] w-full h-[32px] rounded-[12px]"
       >
         <span class="font-bold text-[12px] text-white lg:text-[16x]"
@@ -105,7 +108,8 @@
     <p
       class="text-[12px] text-[#717171] text-center mt-[12px] lg:text-[16px] lg:mt-[44px]"
     >
-      Have an account yet? <span class="font-bold cursor-pointer" routerLink="/signin"> Log in</span>
+      Have an account yet?
+      <span class="font-bold cursor-pointer" routerLink="/signin"> Log in</span>
     </p>
   </div>
 </div>

@@ -1,0 +1,83 @@
+<app-pro-meida-x-header-nav></app-pro-meida-x-header-nav>
+<div
+  class="w-full pb-[40px] bg-[#050B16] bg-[url('https://firebasestorage.googleapis.com/v0/b/characterstore-32051.appspot.com/o/bgContact.png?alt=media&token=a9d17b7c-2d46-4fdc-9bff-b68d6a0fe278')]"
+>
+  <div class="text-white text-center">
+    <h1 class="text-[48px]">Contact Us</h1>
+  </div>
+  <div
+    class="w-full text-white lg:px-[120px] mt-[100px] px-5 flex justify-between"
+  >
+    <div class="w-[45%] bg-[#202020] p-[40px] rounded-lg">
+      <h1 class="">Contact us</h1>
+      <h1 class="text-[24px]">Get In Touch</h1>
+      <div class="w-full mt-[40px]">
+        <form class="contact-form text-white" (submit)="sendEmail($event)">
+          <p class="">Name</p>
+          <input
+            type="text"
+            class="w-full bg-[#363636] px-[12px] rounded-[12px] h-[48px]"
+            name="user_name"
+            required
+          />
+
+          <p class="mt-[16px]">Our Mail</p>
+          <input
+            type=""
+            class="w-full px-[12px] bg-[#363636] rounded-[12px] h-[48px]"
+            name="user_email"
+            value="hunghv.b21pt123@gmail.com"
+          />
+
+          <p class="mt-[16px]">Message</p>
+          <textarea
+            name="message"
+            class="w-full p-[12px] bg-[#363636] h-[60px] rounded-[12px]"
+            required
+          ></textarea>
+
+          <button
+            class="w-full h-[40px] bg-white text-black mt-[24px] rounded-lg font-bold"
+            type="submit"
+          >
+            Send now
+          </button>
+        </form>
+      </div>
+    </div>
+    <div class="w-[45%] text-white">
+      <div class="text-left">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione
+        deserunt, non eius quia, dolore quis id unde, earum facere cupiditate
+        aliquid porro vero? Magni, voluptate voluptatum sapiente mollitia a
+        provident?
+      </div>
+      <div class="w-full flex justify-between">
+        <div class="w-[40%]">
+          <div class="w-full flex justify-center mt-[40px]">
+            <i class="fa-solid fa-square-phone scale-[200%]"></i>
+          </div>
+          <div class="w-full text-center mt-[16px]">
+            <p class="block">Phone Number</p>
+            <p class="">+1236540321</p>
+          </div>
+        </div>
+        <div class="w-[40%]">
+          <div class="w-full flex justify-center mt-[40px]">
+            <i class="fa-solid fa-envelope scale-[200%]"></i>
+          </div>
+          <div class="w-full text-center mt-[16px]">
+            <p class="block">Email Address</p>
+            <p class="">HungHV.b21pt123.com</p>
+          </div>
+        </div>
+      </div>
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5893.7902667506805!2d-71.11451528987902!3d42.38738039605606!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89e3778d2768de75%3A0x16e844206533f347!2s23%20Elm%20St%2C%20Somerville%2C%20MA%2002143%2C%20Hoa%20K%E1%BB%B3!5e0!3m2!1svi!2s!4v1728580170804!5m2!1svi!2s"
+        frameborder="0"
+        class="w-full h-[300px] mt-[46px]"
+      ></iframe>
+    </div>
+  </div>
+</div>
+<app-promedia-x-footer-nav></app-promedia-x-footer-nav>

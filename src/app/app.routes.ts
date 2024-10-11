@@ -11,6 +11,7 @@ import { AllmodelComponent } from './allmodel/allmodel.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { PaymentComponent } from './payment/payment.component';
 import { FilterSortComponent } from './filter-sort/filter-sort.component';
+import { ContactComponent } from './contact/contact.component';
 
 export const routes: Routes = [
   {
@@ -66,5 +67,9 @@ export const routes: Routes = [
   {
     path: 'filtersort',
     component: FilterSortComponent,
+  },
+  {
+    path: 'contact',
+    component: ContactComponent,
   },
 ];

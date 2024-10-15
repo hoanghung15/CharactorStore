@@ -29,6 +29,10 @@ export class SigninComponent {
       sessionStorage.setItem('avtUrl', respone.avtUrl);
       sessionStorage.setItem('firstname', respone.firstname);
       sessionStorage.setItem('lastname', respone.lastname);
+      sessionStorage.setItem('email', respone.email);
+      sessionStorage.setItem('phonenumber', respone.phonenumber);
+      sessionStorage.setItem('birthday', respone.birthday);
+      sessionStorage.setItem('password', respone.password);
     });
   }
 }

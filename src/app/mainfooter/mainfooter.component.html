@@ -33,11 +33,15 @@
       <div
         class="mt-[12px] lg:text-center text-[#888888] lg:text-[16px] lg:space-x-[72px] text-[14px] lg:flex"
       >
-        <p class="">Overview</p>
-        <p class="">Feature</p>
-        <p class="">Careers</p>
-        <p class="">Help</p>
-        <p class="">Privacy</p>
+        <p routerLink="/" class="cursor-pointer">Overview</p>
+        <p class="cursor-pointer">Feature</p>
+        <p class="cursor-pointer">Careers</p>
+        <a
+          class="cursor-pointer"
+          href="https://www.youtube.com/watch?v=mZ5up0fBj4M"
+          >Help</a
+        >
+        <p routerLink="/policy" class="">Privacy</p>
       </div>
     </div>
     <div class="lg:w-[30%] lg:justify-end mt-[12px] lg:mt-[0px]">
@@ -66,10 +70,10 @@
       <div
         class="order-2 lg:flex lg:space-x-[16px] text-[#888888] text-center lg:text-right"
       >
-        <p class="">About</p>
-        <p class="">Contact</p>
-        <p class="">Term Of Service</p>
-        <p class="">Privacy Policy</p>
+        <p routerLink="/" class="cursor-default">About</p>
+        <p routerLink="/contact" class="cursor-default">Contact</p>
+        <p routerLink="/term" class="cursor-default">Term Of Service</p>
+        <p routerLink="/policy" class="cursor-default">Privacy Policy</p>
       </div>
       <div class="order-1">
         <p class="text-[#888888] text-center lg:text-left">

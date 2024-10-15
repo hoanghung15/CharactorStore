@@ -12,6 +12,9 @@ import { CheckoutComponent } from './checkout/checkout.component';
 import { PaymentComponent } from './payment/payment.component';
 import { FilterSortComponent } from './filter-sort/filter-sort.component';
 import { ContactComponent } from './contact/contact.component';
+import { PolicyComponent } from './policy/policy.component';
+import { UserComponent } from './user/user.component';
+import { TermofserComponent } from './termofser/termofser.component';
 
 export const routes: Routes = [
   {
@@ -71,5 +74,17 @@ export const routes: Routes = [
   {
     path: 'contact',
     component: ContactComponent,
+  },
+  {
+    path: 'policy',
+    component: PolicyComponent,
+  },
+  {
+    path: 'user',
+    component: UserComponent,
+  },
+  {
+    path: 'term',
+    component: TermofserComponent,
   },
 ];

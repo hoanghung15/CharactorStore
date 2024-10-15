@@ -1,0 +1,100 @@
+<app-mainheader></app-mainheader>
+<div class="bg-[#F9FAFC] w-full px-5 lg:px-[120px] pt-[120px]">
+  <div class="w-full lg:flex lg:justify-between">
+    <div class="lg:w-[25%]">
+      <div class="w-full flex justify-center relative">
+        <img [src]="avtUrl" alt="" class="w-[200px] h-[200px] rounded-[100px]" />
+        <img
+        src="/assets/payment/iconedit.svg"
+        alt=""
+        class="absolute top-[140px] right-[60px] cursor-pointer"
+        onclick="document.getElementById('file-upload').click()"
+        />
+        <input (change)="onFileSelected($event)" id="file-upload" name="file-upload" type="file" class="hidden">
+      </div>
+      <div class="text-center mt-[30px]">
+        <p class="font-bold">{{ firstname }} {{ lastname }}</p>
+        <p class="">{{ email }}</p>
+      </div>
+      <div class="w-full mt-[60px]">
+        <div
+          class="w-full h-[48px] rounded-[12px] px-4 text-white font-medium bg-[#0D6098] flex items-center"
+        >
+          <p class="">Personl Information</p>
+        </div>
+      </div>
+    </div>
+    <div class="lg:w-[70%]">
+      <h1 class="text-center lg:text-left text-[#0D6098] text-[56px]">
+        ACCOUNT
+      </h1>
+      <div class="w-full space-y-[32px]">
+        <div class="lg:flex lg:justify-between">
+          <div class="w-full lg:w-[45%]">
+            <p class="text-[#717171]">First name</p>
+            <input
+              type="text" #firstnametxt
+              value="{{ firstname }}"
+              class="w-full rounded-[12px] px-[20px] h-[48px] bg-[#F0F0F0]"
+            />
+          </div>
+          <div class="w-full lg:w-[45%]">
+            <p class="text-[#717171]">Last name</p>
+            <input
+              type="text" #lastnametxt
+              value="{{ lastname }}"
+              class="w-full rounded-[12px] px-[20px] h-[48px] bg-[#F0F0F0]"
+            />
+          </div>
+        </div>
+        <div class="lg:flex lg:justify-between">
+          <div class="w-full lg:w-[45%]">
+            <p class="text-[#717171]">Phone</p>
+            <input
+              type="text" #phonenumbertxt
+              value="{{ phonenumber }}"
+              class="w-full rounded-[12px] px-[20px] h-[48px] bg-[#F0F0F0]"
+            />
+          </div>
+          <div class="w-full lg:w-[45%]">
+            <p class="text-[#717171]">Email</p>
+
+            <div
+              class="flex items-center w-full rounded-[12px] px-[20px] h-[48px] bg-[#F0F0F0]"
+            >
+              <p class="">{{ email }}</p>
+            </div>
+          </div>
+        </div>
+        <div class="lg:flex lg:justify-between">
+          <div class="w-full lg:w-[45%]">
+            <p class="text-[#717171]">Date of Birth</p>
+            <input #birthdaytxt
+              value="{{ birthday }}"
+              type="date"
+              class="w-full rounded-[12px] px-[20px] h-[48px] bg-[#F0F0F0]"
+            />
+          </div>
+          <div class="w-full lg:w-[45%]">
+            <p class="text-[#717171]">Password</p>
+            <input
+              type="password" #passwordtxt
+              value="{{ password }}"
+              class="w-full rounded-[12px] px-[20px] h-[48px] bg-[#F0F0F0]"
+            />
+          </div>
+        </div>
+        <div class="w-full justify-center flex">
+          <button (click)="updateInfor(firstnametxt.value,lastnametxt.value,phonenumbertxt.value,birthdaytxt.value,passwordtxt.value)"
+            class="w-[150px] h-[48px] bg-[#0D6098] text-white rounded-[12px] font-bold"
+          >
+            Save
+          </button>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+  
+</div>
+<app-mainfooter></app-mainfooter>

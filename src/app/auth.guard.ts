@@ -9,7 +9,6 @@ export const authGuard: CanActivateFn = (route, state) => {
     _router.navigate(['signin']);
     return false;
   } else if (isloggin == 'false') {
-    alert('ngu');
     _router.navigate(['signin']);
     return false;
   }

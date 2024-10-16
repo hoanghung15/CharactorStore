@@ -35,4 +35,7 @@ export class SigninComponent {
       sessionStorage.setItem('password', respone.password);
     });
   }
+  loginwithGG() {
+    sessionStorage.setItem('isloggin', 'true');
+  }
 }
